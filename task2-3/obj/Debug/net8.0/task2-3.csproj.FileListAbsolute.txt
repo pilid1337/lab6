@@ -1,0 +1,14 @@
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.GeneratedMSBuildEditorConfig.editorconfig
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.AssemblyInfoInputs.cache
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.AssemblyInfo.cs
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.csproj.CoreCompileInputs.cache
+/home/pilid1337/ЯПы/lab6/task2-3/bin/Debug/net8.0/task2-3
+/home/pilid1337/ЯПы/lab6/task2-3/bin/Debug/net8.0/task2-3.deps.json
+/home/pilid1337/ЯПы/lab6/task2-3/bin/Debug/net8.0/task2-3.runtimeconfig.json
+/home/pilid1337/ЯПы/lab6/task2-3/bin/Debug/net8.0/task2-3.dll
+/home/pilid1337/ЯПы/lab6/task2-3/bin/Debug/net8.0/task2-3.pdb
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.dll
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/refint/task2-3.dll
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.pdb
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/task2-3.genruntimeconfig.cache
+/home/pilid1337/ЯПы/lab6/task2-3/obj/Debug/net8.0/ref/task2-3.dll

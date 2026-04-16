@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dv4rpmybtryLJMN+s5ylsTst+n7yCjJ7hlC0JlURkPUDzsWeEcbcHUdKH0NaF1mDaZokPkcCrAYN0qRQoP8OtA==",
+  "success": true,
+  "projectFilePath": "/home/pilid1337/ЯПы/lab6/task2-3/task2-3.csproj",
+  "expectedPackageFiles": [
+    "/home/pilid1337/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
