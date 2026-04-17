@@ -61,7 +61,8 @@ public class Money
         }
         else
         {
-            return new Money((uint)(resultKopecks / 100), (byte)(resultKopecks % 100));
+            return new Money((uint)(resultKopecks / 100), 
+                (byte)(resultKopecks % 100));
         }
     }
 
@@ -74,7 +75,8 @@ public class Money
     {
         long totalKopecks = (long)original._rubles * 100 + original._kopeks;
         long resultKopecks = totalKopecks + 1;
-        return new Money((uint)(resultKopecks / 100), (byte)(resultKopecks % 100));
+        return new Money((uint)(resultKopecks / 100), 
+            (byte)(resultKopecks % 100));
     }
 
     public static Money operator --(Money original)
@@ -108,7 +110,8 @@ public class Money
         }
         else
         {
-            return new Money((uint)(resultKopecks / 100), (byte)(resultKopecks % 100));
+            return new Money((uint)(resultKopecks / 100), 
+                (byte)(resultKopecks % 100));
         }
     }
 
@@ -124,7 +127,8 @@ public class Money
         }
         else
         {
-            return new Money((uint)(resultKopecks / 100), (byte)(resultKopecks % 100));
+            return new Money((uint)(resultKopecks / 100), 
+                (byte)(resultKopecks % 100));
         }
     }
 }

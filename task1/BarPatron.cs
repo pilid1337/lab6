@@ -42,7 +42,8 @@ public class VipPatron : BarPatron
 {
     private int _remainingVipDays;
 
-    public VipPatron(bool sober, bool happy, int remainingDays) : base(sober, happy)
+    public VipPatron(bool sober, bool happy, int remainingDays) 
+    : base(sober, happy)
     {
         _remainingVipDays = remainingDays >= 0 ? remainingDays : 0;
     }

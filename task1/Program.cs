@@ -10,7 +10,7 @@
 
         BarPatron patron = new BarPatron(sober, happy);
         Console.WriteLine($"Создан: {patron}");
-        Console.WriteLine($"Импликация (трезвый -> довольный): {patron.Implication()}");
+        Console.WriteLine($"Импликация: {patron.Implication()}");
 
         BarPatron patronCopy = new BarPatron(patron);
         Console.WriteLine($"\nКопия: {patronCopy}");
@@ -32,7 +32,7 @@
         Console.WriteLine($"Может войти в VIP-зону? {vip.CanEnterVipLounge()}");
 
         Console.WriteLine("\n--- Проверка UseVipDay ---");
-        Console.WriteLine($"Используем один день... Осталось: {vip.UseVipDay()}");
+        Console.WriteLine($"Используем день... Осталось: {vip.UseVipDay()}");
         Console.WriteLine($"Ещё раз используем... Осталось: {vip.UseVipDay()}");
 
         Console.WriteLine("\n--- Проверка ExtendVipSubscription ---");
