@@ -15,7 +15,8 @@ public class VipPatron : BarPatron
 
     private int RemainingVipDays
     {
-        get { 
+        get 
+        { 
             return _remainingVipDays; 
         }
         set 
