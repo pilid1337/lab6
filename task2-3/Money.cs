@@ -1,62 +1,59 @@
 public class Money
 {
-    private uint rubles;
-    private byte kopeks;
+    private uint _rubles;
+    private byte _kopeks;
 
     // Конструкторы
     public Money(uint rub, byte kop)
     {
-        rubles = rub;
-        kopeks = kop;
+        _rubles = rub + (uint)(kop / 100);
+        _kopeks = (byte)(kop % 100);
+        
     }
 
     public Money(uint rub)
     {
-        rubles = rub;
-        kopeks = 0;
+        _rubles = rub;
+        _kopeks = 0;
     }
 
     public Money(byte kop)
     {
-        kopeks = (byte)(kop % 100);
-        rubles = (uint)(kop / 100);
+        _kopeks = (byte)(kop % 100);
+        _rubles = (uint)(kop / 100);
     }
 
     public Money()
     {
-        rubles = 0;
-        kopeks = 0;
+        _rubles = 0;
+        _kopeks = 0;
     }
 
-    // Конструктор копирования
     public Money(Money original)
     {
-        rubles = original.rubles;
-        kopeks = original.kopeks;
+        _rubles = original._rubles;
+        _kopeks = original._kopeks;
     }
 
-    // Свойства
     public uint Rubles
     {
-        get { return rubles; }
-        set { rubles = value; }
+        get { return _rubles; }
+        set { _rubles = value; }
     }
 
     public byte Kopeks
     {
-        get { return kopeks; }
+        get { return _kopeks; }
         set
         {
-            rubles += (uint)(value / 100);
-            kopeks = (byte)(value % 100);    
+            _rubles += (uint)(value / 100);
+            _kopeks = (byte)(value % 100);    
         }
     }
 
-    // Методы
     public Money SubtractKopecks(uint kopecks)
     {
-        // Переводим текущую сумму в копейки
-        long totalKopecks = (long)rubles * 100 + kopeks;
+        long totalKopecks = (long)_rubles * 100 + _kopeks;
         long resultKopecks = totalKopecks - kopecks;
         if (resultKopecks < 0)
         {
@@ -68,17 +65,14 @@ public class Money
         }
     }
 
-    // Перегрузка ToString()
     public override string ToString()
     {
-        return $"{rubles} руб. {kopeks} коп.";
+        return $"{_rubles} руб. {_kopeks} коп.";
     }
 
-    // Унарные операции
     public static Money operator ++(Money original)
     {
-        // Добавляем 1 копейку
-        long totalKopecks = (long)original.rubles * 100 + original.kopeks;
+        long totalKopecks = (long)original._rubles * 100 + original._kopeks;
         long resultKopecks = totalKopecks + 1;
         return new Money((uint)(resultKopecks / 100), (byte)(resultKopecks % 100));
     }
@@ -88,29 +82,24 @@ public class Money
         return original.SubtractKopecks(1);
     }
 
-    // Операции приведения типа
     public static explicit operator uint(Money original)
     {
-        return original.rubles;
+        return original._rubles;
     }
 
-    // Неявное приведение к bool (true, если сумма не равна нулю)
     public static implicit operator bool(Money original)
     {
-        return !(original.kopeks == 0 && original.rubles == 0);
+        return !(original._kopeks == 0 && original._rubles == 0);
     }
 
-    // Бинарные операции
-    // Money - uint (левосторонняя)
     public static Money operator -(Money m, uint kopecks)
     {
         return m.SubtractKopecks(kopecks);
     }
 
-    // uint - Money (правосторонняя) – вычитаем денежную сумму из заданного числа копеек
     public static Money operator -(uint kopecks, Money m)
     {
-        long totalKopecks = (long)m.rubles * 100 + (long)m.kopeks;
+        long totalKopecks = (long)m._rubles * 100 + (long)m._kopeks;
         long resultKopecks = kopecks - totalKopecks;
 
         if (resultKopecks < 0)
@@ -123,11 +112,10 @@ public class Money
         }
     }
 
-    // Money - Money
     public static Money operator -(Money m1, Money m2)
     {
-        long totalKopecks1 = (long)m1.rubles * 100 + m1.kopeks;
-        long totalKopecks2 = (long)m2.rubles * 100 + m2.kopeks;
+        long totalKopecks1 = (long)m1._rubles * 100 + m1._kopeks;
+        long totalKopecks2 = (long)m2._rubles * 100 + m2._kopeks;
         long resultKopecks = totalKopecks1 - totalKopecks2;
 
         if (resultKopecks < 0)

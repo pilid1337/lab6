@@ -1,96 +1,84 @@
 public class BarPatron
 {
-    private bool isSober;
-    private bool isHappy;
+    private bool _isSober;
+    private bool _isHappy;
 
-    // Конструктор с параметрами
     public BarPatron(bool sober, bool happy)
     {
-        isSober = sober;
-        isHappy = happy;
+        _isSober = sober;
+        _isHappy = happy;
     }
 
-    // Конструктор копирования
     public BarPatron(BarPatron other)
     {
-        if (other == null) throw new ArgumentNullException(nameof(other));
-        isSober = other.isSober;
-        isHappy = other.isHappy;
+        _isSober = other._isSober;
+        _isHappy = other._isHappy;
     }
 
-    // Свойства
     public bool IsSober
     {
-        get { return isSober; }
-        set { isSober = value; }
+        get { return _isSober; }
+        set { _isSober = value; }
     }
 
     public bool IsHappy
     {
-        get { return isHappy; }
-        set { isHappy = value; }
+        get { return _isHappy; }
+        set { _isHappy = value; }
     }
 
-    // Метод импликации
     public bool Implication()
     {
-        return !isSober || isHappy;
+        return !_isSober || _isHappy;
     }
 
     public override string ToString()
     {
-        return $"BarPatron: трезвый={isSober}, довольный={isHappy}";
+        return $"BarPatron: трезвый={_isSober}, довольный={_isHappy}";
     }
 }
 
-// Дочерний класс: VIP-клиент с оставшимися днями подписки
 public class VipPatron : BarPatron
 {
-    private int remainingVipDays;
+    private int _remainingVipDays;
 
-    // Конструктор с параметрами
     public VipPatron(bool sober, bool happy, int remainingDays) : base(sober, happy)
     {
-        remainingVipDays = remainingDays >= 0 ? remainingDays : 0;
+        _remainingVipDays = remainingDays >= 0 ? remainingDays : 0;
     }
 
-    // Конструктор копирования
     public VipPatron(VipPatron other) : base(other)
     {
-        if (other == null) throw new ArgumentNullException(nameof(other));
-        remainingVipDays = other.remainingVipDays;
+        _remainingVipDays = other._remainingVipDays;
     }
 
-    // Свойство для доступа к дням подписки (можно сделать public)
-    public int RemainingVipDays
+    private int RemainingVipDays
     {
-        get { return remainingVipDays; }
-        set { remainingVipDays = value >= 0 ? value : 0; }
+        get { return _remainingVipDays; }
+        set { _remainingVipDays = value >= 0 ? value : 0; }
     }
 
-    // Метод 1: может войти в VIP-зону (если есть хотя бы один день)
     public bool CanEnterVipLounge()
     {
-        return remainingVipDays > 0;
+        return _remainingVipDays > 0;
     }
 
-    // Метод 2: использовать один VIP-день
     public int UseVipDay()
     {
-        if (remainingVipDays > 0)
-            remainingVipDays--;
-        return remainingVipDays;
+        if (_remainingVipDays > 0)
+        {
+            _remainingVipDays--;
+        }
+        return _remainingVipDays;
     }
 
-    // Метод 3: продлить подписку на указанное количество дней
     public void ExtendVipSubscription(int days)
     {
-        if (days > 0)
-            remainingVipDays += days;
+        _remainingVipDays += days;
     }
 
     public override string ToString()
     {
-        return $"VipPatron: трезвый={IsSober}, довольный={IsHappy}, дней подписки={remainingVipDays}";
+        return $"VipPatron: трезвый={IsSober}, довольный={IsHappy}, дней подписки={_remainingVipDays}";
     }
 }
