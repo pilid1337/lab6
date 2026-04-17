@@ -8,7 +8,6 @@ public class Money
     {
         _rubles = rub + (uint)(kop / 100);
         _kopeks = (byte)(kop % 100);
-        
     }
 
     public Money(uint rub)
@@ -37,13 +36,22 @@ public class Money
 
     public uint Rubles
     {
-        get { return _rubles; }
-        set { _rubles = value; }
+        get 
+        { 
+            return _rubles; 
+        }
+        set 
+        { 
+            _rubles = value; 
+        }
     }
 
     public byte Kopeks
     {
-        get { return _kopeks; }
+        get 
+        { 
+            return _kopeks; 
+        }
         set
         {
             _rubles += (uint)(value / 100);

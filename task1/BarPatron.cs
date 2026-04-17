@@ -17,14 +17,26 @@ public class BarPatron
 
     public bool IsSober
     {
-        get { return _isSober; }
-        set { _isSober = value; }
+        get 
+        { 
+            return _isSober; 
+        }
+        set 
+        { 
+            _isSober = value; 
+        }
     }
 
     public bool IsHappy
     {
-        get { return _isHappy; }
-        set { _isHappy = value; }
+        get 
+        { 
+            return _isHappy; 
+        }
+        set 
+        { 
+            _isHappy = value; 
+        }
     }
 
     public bool Implication()
@@ -55,8 +67,13 @@ public class VipPatron : BarPatron
 
     private int RemainingVipDays
     {
-        get { return _remainingVipDays; }
-        set { _remainingVipDays = value >= 0 ? value : 0; }
+        get { 
+            return _remainingVipDays; 
+        }
+        set 
+        { 
+            _remainingVipDays = value >= 0 ? value : 0; 
+        }
     }
 
     public bool CanEnterVipLounge()
